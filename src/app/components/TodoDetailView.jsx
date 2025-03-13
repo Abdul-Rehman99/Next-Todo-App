@@ -1,10 +1,11 @@
-'use client'; // Mark this as a Client Component
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { Check, X, Edit, Trash2, ArrowLeft } from 'lucide-react';
-import ReactQuill from 'react-quill';
+import dynamic from 'next/dynamic'; // Import dynamic from Next.js
 import 'react-quill/dist/quill.snow.css'; // Import Quill CSS
 
+// Dynamically import ReactQuill with SSR disabled
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 const TodoDetailView = ({
@@ -35,7 +36,7 @@ const TodoDetailView = ({
     ],
   };
 
-  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" && window.innerWidth < 640);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth < 640);
 
   // Update isMobile state when screen resizes
   useEffect(() => {
