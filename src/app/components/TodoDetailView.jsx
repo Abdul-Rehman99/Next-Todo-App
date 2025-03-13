@@ -5,6 +5,8 @@ import { Check, X, Edit, Trash2, ArrowLeft } from 'lucide-react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import Quill CSS
 
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 const TodoDetailView = ({
   addTodo,
   updateTodo,
